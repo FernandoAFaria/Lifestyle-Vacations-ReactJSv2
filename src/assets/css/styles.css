@@ -1,0 +1,724 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed");
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Barlow Condensed", sans-serif;
+    
+}
+
+p,
+input,
+textarea,
+div,
+button,
+ul,
+li, select {
+    font-family: "Barlow", sans-serif;
+}
+
+/**********************
+***********NAV*********
+**********************/
+
+.nav {
+    height: 75px;
+    background: transparent;
+    width: 100%;
+    color: white;
+    transition: all 0.5s;
+    justify-content: space-between;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 4;
+}
+
+.nav-book-btn {
+    background: rgb(234,82,111);
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+}
+.nav-book-btn:hover{
+    background: white;
+    color: rgb(234,82,111);
+}
+
+.nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+.nav-link:hover {
+    color: lightskyblue;
+}
+.browse-link {
+    text-decoration: none;
+    color: white;
+}
+
+/********************
+****Lanidng Page ****
+*********************
+*********************/
+
+.container {
+    padding: 0 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.slant {
+    transform: skewy(-6deg) translateY(-200px);
+    height: 100vh;
+    min-height: 800px;
+}
+
+.landing-background {
+    background: linear-gradient(
+            rgba(55, 56, 134, 0.95),
+            rgba(76, 224, 179, 0.75)
+        ), url('../imgs/beach.jpg');
+    background-size: cover;
+}
+.black {
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: relative;
+    z-index: 5;
+    opacity: 0;
+    transition: all .2s;
+}
+.landing-page-section {
+    position: relative;
+    text-align: center;
+}
+
+.landing-text {
+    color: white;
+    position: absolute;
+    font-size: calc(2vw + 16px);
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
+    flex-direction: column;
+}
+
+.fa-angle-double-down {
+    transform: translateY(-75px);
+    color: #07beb8;
+    font-size: 2.4rem;
+    position: absolute;
+    animation: show 0.4s infinite linear alternate;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.browse-btn {
+    background: rgb(0,165,207);
+    font-size: 1.3rem;
+    padding: 20px 45px;
+    margin-top: 75px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 4px 5px rgba(55,55,55,.4);
+    transition: all .3s;
+   
+    
+}
+.browse-btn:hover {
+    background: white;
+    color: rgb(0,165,207);
+}
+.card-btn {
+    background: rgb(234, 82, 111);
+    padding: 8px 45px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 25px 0;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 3px 4px 5px rgba(55,55,55,.4);
+}
+.card-btn:hover {
+    background: white;
+    color: rgb(234,82,111);
+}
+
+
+/*
+*
+*Cards
+*
+*/
+
+.landing-cards-section {
+    
+    min-height: 1000px;
+    position: relative;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+
+}
+.landing-title {
+    margin-bottom: 75px;
+    font-size: 2.6rem;
+}
+.landing-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.about-background {
+    background: linear-gradient(
+            rgba(0, 165, 207, 0.95),
+            rgba(7, 190, 184, 0.8)
+        );      
+}
+
+/*Card itself */
+.card-container {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    border-radius: 10px;
+    margin-bottom: 75px;  
+}
+.card-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all .7s;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    line-height: 1.9;
+}
+.card-container:hover .card-body {
+    transform: rotateY(180deg);
+}
+.front-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 3px 5px 5px rgba(55,55,55,.35);
+}
+.conf-back {
+    background:linear-gradient(40deg,rgba(255,210,111,.8), rgba(54,119,255,.70)),url('../imgs/confback.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.pres-back {
+    background:linear-gradient(40deg,rgba(255,210,111,.8), rgba(54,119,255,.70)),url('../imgs/presback.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.trop-back {
+    background:linear-gradient(40deg,rgba(255,210,111,.8), rgba(54,119,255,.70)),url('../imgs/tropback.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.royal-back {
+    background:linear-gradient(40deg,rgba(255,210,111,.8), rgba(54,119,255,.70)),url('../imgs/royalback.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.villas-back {
+    background:linear-gradient(40deg,rgba(255,210,111,.8), rgba(54,119,255,.70)),url('../imgs/crown3.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.dream-back {
+    background:linear-gradient(40deg,rgba(255,210,111,.8), rgba(54,119,255,.70)),url('../imgs/dreamsuitesback.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.back-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #00a5cf;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    box-shadow: 3px 5px 5px rgba(55,55,55,.35);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 25px;
+}
+
+/*
+*
+*
+**Overview
+*
+*
+*/
+.overview {
+    width: 90vw;
+    border: 20px solid #eee;
+    margin: 0 auto -250px auto;
+    background: white;
+    transform: translateY(-350px);
+
+}
+
+
+.overview-left {
+    flex-basis: 25%;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+    position: relative;
+    padding: 50px 15px;
+}
+.overview-left p {
+    text-align: left;
+    margin-top: 25px;
+    font-size: 1.1rem;
+}
+.overview-right {
+    flex-basis: 75%;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    justify-content: space-evenly;
+   flex-wrap: wrap;
+    padding-top: 5px;
+}
+
+.img-container {
+    margin: 8px 4px;
+    width: 370px;
+    height: 230px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s;
+}
+.img-container:hover {
+    transform: scale(1.1);
+}
+.img-container img {
+    width: 100%;
+}
+.text-overlay {
+    display: block;
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.301);
+    text-align: left;
+    font-size: 1.3rem;
+    padding-left: 15px;
+}
+.text-overlay h1{
+    
+    margin-top: 160px;
+}
+@media screen and (max-width: 900px) {
+    .overview .flex-center {
+        flex-direction: column;
+    }
+    .overview {
+        margin-top: 10px;
+    }
+    .img-container {
+        margin-bottom: 15px;
+    }
+}
+
+
+/*
+*
+*
+Why Book
+*
+*
+*/
+
+.why-book {
+    width: 100%;
+    min-height: 400px;
+    text-align: center;
+    padding: 0 100px;
+    margin-bottom: 50px;
+}
+.why-title {
+    font-size: 2.6rem;
+    margin-bottom: 75px;
+}
+
+.why-reasons {
+    width: 375px;
+    height: 260px;
+    
+}
+.why-reasons i{
+    font-size: 4.4rem;
+    margin: 25px;
+    color: gold;
+}
+.why-book .flex-center {
+    justify-content: space-between;
+}
+@media screen and (max-width: 1050px) {
+    .why-book .flex-center {
+        flex-direction: column;
+    }
+}
+
+/*
+*
+*Testimonials
+*
+*/
+.testimonials {
+    width: 100%;
+    position: relative;
+    background: #ea526f;
+    margin-top: 15px;
+    margin-bottom: 45px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    padding: 25px 100px;
+}
+.testimonials img {
+    max-height: 300px;
+    display: inline;
+    margin: 40px 25px;
+    transition: all .3s;
+}
+@media screen and (max-width: 1825px) {
+    .testimonials img {
+        max-height: 200px;
+    }
+}
+@media screen and (max-width: 1365px) {
+    .testimonials  {
+        padding: 25px 10px;
+    }
+}
+.testimonials img:hover {
+    transform: scale(1.25);
+}
+.right-arrow {
+    position: absolute;
+    font-size: 2.8rem;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.slider-pg-1 {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    width: 100%;
+    transition: all .3s;
+}
+
+.slider-pg-2 {
+    display: inline-block;
+    position: absolute;
+    left: 100vw;
+    width: 100%;
+
+    transition: all .3s;
+}
+/* @media screen and (max-width: 1625px) {
+    .testimonials img {
+        max-height: 230px;
+    
+        margin: 40px 15px;
+        
+    }
+    .testimonials {
+        padding:25px 15px;
+    }
+} */
+
+
+/*
+*
+*
+Resort Page
+*
+*
+*/
+.resort_page {
+    padding: 100px 50px;
+    min-height: 85vh;
+    background: linear-gradient(45deg, rgba(0,165,207,.91), rgba(7,190,184,.81)), url('../imgs/drinks.jpg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    line-height: 1.6;
+    font-size: 1.4rem;
+
+}
+.resort_page h1{
+    margin: 50px;
+}
+
+#about-section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+}
+.about-body {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    
+}
+.resort_images {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    padding: 50px 0;
+
+}
+.resort_features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 75px;
+}
+.all_inclusive {
+    
+    flex-basis: 40%;
+    min-width: 375px;
+}
+.amenities {
+    flex-basis: 40%;
+    min-width: 375px;
+   
+}
+
+.mySlides {
+    
+    width: 45vw;
+    height: 500px;
+    margin: 0 15px;
+    background-size: cover;
+    background-position: center center;
+    transition: all .3s;
+   
+}
+.mySlides:hover {
+    transform: scale(1.05);
+}
+.book_now {
+    padding-top: 75px;
+    text-align: center;
+    
+}
+.book_now_btn {
+    text-decoration: none;
+    color: white;
+    background: #ea526f;
+    padding: 25px 35px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 5px rgba(55,55,55,.5);
+    font-weight: bold;
+    transition: all .3s;
+}
+.book_now_btn:hover {
+    background: white;
+    color: rgb(234,82,111);
+}
+
+@media screen and (max-width: 1460px){
+    .mySlides {
+        width: 75vw;
+    }
+}
+@media screen and (max-width: 960px){
+    .mySlides {
+        width: 90vw;
+    }
+}
+ 
+
+/*
+*
+*Footer
+*
+*/
+
+.footer {
+    height: 150px;
+    width: 100vw;
+    background: #002731;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+.footer-copyright {
+    width: 100vw;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.719);
+}
+
+/*
+*
+*Book Now
+*
+*/
+
+.book {
+    min-height: 900px;
+    padding: 125px 0;
+    background: linear-gradient(40deg,rgba(102, 102, 177, 0.9),rgba(92, 155, 151, 0.4)), url('../imgs/beach-sand.jpg');
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    position: relative;
+
+}
+.book label {
+    margin-right: 5px;
+}
+.book input, select {
+    background: white;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-left: 15px;
+   
+
+}
+.book td{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+    
+    height: 45px;
+    text-align: right;
+}
+.book td:nth-child(even){
+    text-align: left;
+}
+
+#payment-modal {
+    background: white;
+    color: black;
+    padding: 10px 25px;
+    position: absolute;
+    top: 50%;
+    border-radius: 5px;
+   max-width: 85vw;
+   width: 400px;
+    left: 50%;
+    transform: translatey(-50%) translatex(-50%);
+    z-index: 99;
+
+}
+.stripe-element {
+    background: white;
+    padding: 15px;
+    border: 1px solid darkgrey;
+    margin: 15px 0;
+}
+.payment-overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+    background: rgba(0, 0, 0, 0.719);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+#personal-info input{
+    background: #eee;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    display: block;
+    width: 90%;
+}
+#personal-info textarea {
+    background: #eee;
+    border: 1px solid grey;
+  
+    transform: translatey(8px);
+    padding: 10px;
+    height: 75px;
+    width: 100%;
+}
+
